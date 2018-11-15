@@ -27,6 +27,20 @@ var Users = new Schema({
   modified: {
     type: Date,
     default: Date.now
+  },
+  hash: {
+    type: String,
+    required: [
+      true, 
+      'There was a problem creating your password'
+    ]
+  },
+  salt: {
+    type: String,
+    required: [
+      true, 
+      'There was a problem creating your password'
+    ]
   }
 });
 
