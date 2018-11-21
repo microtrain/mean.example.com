@@ -52,10 +52,6 @@ router.post('/login', function(req, res, next) {
         return res.json({success:false, error: err });
       }
 
-      //test
-      //console.log(req.session);
-
-
       return res.json({success:true, user: user });
 
     });
