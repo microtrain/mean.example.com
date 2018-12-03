@@ -70,6 +70,11 @@ passport.deserializeUser(function(user, done){
   done(null, user);
 });
 
+app.use(function(req,res,next){
+  res.locals.session = req.session;
+  next();
+});
+
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
